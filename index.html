@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +21,6 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -33,7 +31,6 @@
     }
 
     a { text-decoration: none; color: inherit; }
-
     button, input, select { font: inherit; }
 
     .container {
@@ -98,9 +95,7 @@
       overflow: hidden;
     }
 
-    .hero-content {
-      max-width: 760px;
-    }
+    .hero-content { max-width: 760px; }
 
     .eyebrow {
       display: inline-block;
@@ -145,22 +140,9 @@
     }
 
     .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: var(--lime);
-      color: var(--dark);
-    }
-
-    .btn-outline {
-      color: white;
-      border: 1px solid #ffffff88;
-      background: transparent;
-    }
-
-    .btn-green {
-      color: white;
-      background: var(--green);
-    }
+    .btn-primary { background: var(--lime); color: var(--dark); }
+    .btn-outline { color: white; border: 1px solid #ffffff88; background: transparent; }
+    .btn-green { color: white; background: var(--green); }
 
     .trust-strip {
       background: white;
@@ -235,7 +217,6 @@
     }
 
     .card p { color: var(--muted); font-size: 14px; }
-
     .soft { background: var(--light); }
 
     .info-layout {
@@ -526,7 +507,12 @@
     }
 
     @media (max-width: 560px) {
-      .navbar { padding: 13px 0; align-items: flex-start; flex-direction: column; }
+      .navbar {
+        padding: 13px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       nav { gap: 12px; }
       .hero { padding: 60px 0; }
       .hero p { font-size: 16px; }
@@ -544,6 +530,7 @@
 <header>
   <div class="container navbar">
     <a class="brand" href="#inicio">RETIRO <span>AFORE</span></a>
+
     <nav aria-label="Navegación principal">
       <a href="#informacion">Información</a>
       <a href="#requisitos">Requisitos</a>
@@ -556,20 +543,29 @@
 </header>
 
 <main>
+
   <section class="hero" id="inicio">
     <div class="container">
       <div class="hero-content">
         <span class="eyebrow">ORIENTACIÓN SOBRE RETIRO AFORE</span>
+
         <h1>¿Te encuentras desempleado y quieres conocer tus opciones?</h1>
+
         <p>
           Recibe orientación sobre el retiro parcial por desempleo de tu AFORE.
           Conoce los requisitos, las modalidades y los pasos para revisar tu situación.
         </p>
+
         <div class="actions">
-          <a class="btn btn-primary" href="https://wa.me/529342308693?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20retiro%20por%20desempleo%20AFORE." target="_blank" rel="noopener">
+          <a class="btn btn-primary"
+             href="https://wa.me/529342308693?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20retiro%20por%20desempleo%20AFORE."
+             target="_blank" rel="noopener">
             Consultar por WhatsApp
           </a>
-          <a class="btn btn-outline" href="#informacion">Conocer más</a>
+
+          <a class="btn btn-outline" href="#informacion">
+            Conocer más
+          </a>
         </div>
       </div>
     </div>
@@ -586,24 +582,30 @@
 
   <section id="informacion">
     <div class="container info-layout">
+
       <div>
         <small style="color:var(--green);font-weight:bold;">CONOCE TUS OPCIONES</small>
+
         <h2>¿Qué es el retiro parcial por desempleo AFORE?</h2>
+
         <p>
           Es un derecho que permite a ciertos trabajadores disponer de una parte
           de los recursos de su cuenta individual cuando cumplen los requisitos
           establecidos por la normativa aplicable.
         </p>
+
         <p>
           La autorización y el monto dependen de la situación de cada trabajador,
           de su cuenta individual y de la validación de las instituciones correspondientes.
         </p>
+
         <a class="btn btn-green" href="#contacto">Solicitar orientación</a>
       </div>
 
       <div class="card">
         <div class="card-icon">📋</div>
         <h3>Antes de iniciar, conoce lo importante</h3>
+
         <ul class="check-list">
           <li>Verifica si cumples los requisitos.</li>
           <li>Identifica qué modalidad podría corresponderte.</li>
@@ -611,48 +613,60 @@
           <li>Confirma el procedimiento directamente con tu AFORE.</li>
         </ul>
       </div>
+
     </div>
   </section>
 
   <section class="soft" id="requisitos">
     <div class="container">
+
       <div class="section-heading">
         <small>Información general</small>
         <h2>Requisitos para el retiro por desempleo IMSS</h2>
-        <p>Estos son algunos de los requisitos generales publicados por CONSAR. La AFORE debe revisar cada caso.</p>
+        <p>
+          Estos son algunos de los requisitos generales publicados por CONSAR.
+          La AFORE debe revisar cada caso.
+        </p>
       </div>
 
       <div class="grid">
+
         <article class="card">
           <div class="card-icon">📅</div>
           <h3>46 días de desempleo</h3>
           <p>Contar con al menos 46 días en situación de desempleo.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">🏦</div>
           <h3>Cuenta AFORE</h3>
           <p>Tener una cuenta individual registrada en una AFORE.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">🕔</div>
           <h3>Regla de cinco años</h3>
           <p>No haber ejercido este derecho durante los cinco años anteriores al trámite.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">🪪</div>
           <h3>Identificación</h3>
           <p>Contar con expediente de identificación actualizado conforme a lo solicitado por la AFORE.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">👆</div>
           <h3>Biometría</h3>
           <p>Contar con el enrolamiento biométrico que corresponda, gestionado por la AFORE.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">📄</div>
           <h3>Documentación</h3>
           <p>Presentar los documentos que solicite la AFORE para integrar la solicitud.</p>
         </article>
+
       </div>
 
       <div class="notice">
@@ -661,15 +675,19 @@
         bimestres de cotización acreditados. Para la modalidad B, la cuenta debe
         tener cinco años o más de apertura.
       </div>
+
     </div>
   </section>
 
   <section id="modalidades">
     <div class="container">
+
       <div class="section-heading">
         <small>Conoce las opciones</small>
         <h2>Modalidades de retiro por desempleo IMSS</h2>
-        <p>La modalidad aplicable y el monto autorizado los determina el procedimiento oficial.</p>
+        <p>
+          La modalidad aplicable y el monto autorizado los determina el procedimiento oficial.
+        </p>
       </div>
 
       <div class="tabs" role="tablist" aria-label="Información del retiro">
@@ -683,8 +701,14 @@
 
       <div class="tab-panel active" id="modalidadA">
         <h3>Modalidad A</h3>
-        <p>Puede corresponder a una cantidad equivalente a 30 días del último Salario Base de Cotización, con el límite establecido por la normativa vigente.</p>
-        <p>Entre sus requisitos se encuentran una cuenta individual con al menos tres años de apertura y un mínimo de doce bimestres cotizados acreditados.</p>
+        <p>
+          Puede corresponder a una cantidad equivalente a 30 días del último
+          Salario Base de Cotización, con el límite establecido por la normativa vigente.
+        </p>
+        <p>
+          Entre sus requisitos se encuentran una cuenta individual con al menos
+          tres años de apertura y un mínimo de doce bimestres cotizados acreditados.
+        </p>
         <p>El monto definitivo debe ser confirmado por la AFORE y el IMSS.</p>
       </div>
 
@@ -695,13 +719,21 @@
           <li>El equivalente a 90 días del Salario Base de Cotización de las últimas 250 semanas.</li>
           <li>El 11.5% de los recursos acumulados en la subcuenta RCV.</li>
         </ul>
-        <p>Para esta modalidad, la cuenta individual debe tener cinco años o más de haber sido abierta.</p>
+        <p>
+          Para esta modalidad, la cuenta individual debe tener cinco años o más de haber sido abierta.
+        </p>
       </div>
 
       <div class="tab-panel" id="biometria">
         <h3>Actualización de expediente y biometría</h3>
-        <p>La AFORE puede requerir que el expediente de identificación esté actualizado y que se complete el enrolamiento biométrico.</p>
-        <p>La validación se realiza mediante los mecanismos oficiales de la administradora. No compartas huellas, contraseñas ni códigos con terceros.</p>
+        <p>
+          La AFORE puede requerir que el expediente de identificación esté actualizado
+          y que se complete el enrolamiento biométrico.
+        </p>
+        <p>
+          La validación se realiza mediante los mecanismos oficiales de la administradora.
+          No compartas huellas, contraseñas ni códigos con terceros.
+        </p>
       </div>
 
       <div class="tab-panel" id="documentos">
@@ -717,22 +749,38 @@
 
       <div class="tab-panel" id="semanas">
         <h3>¿Qué sucede con las semanas cotizadas?</h3>
-        <p>El retiro parcial por desempleo puede ocasionar un descuento de semanas cotizadas proporcional a los recursos retirados de la subcuenta RCV.</p>
-        <p>Las semanas descontadas pueden recuperarse mediante el reintegro parcial o total de los recursos correspondientes, conforme al procedimiento aplicable.</p>
-        <div class="notice">Antes de solicitar el retiro, analiza cómo puede afectar tu futura pensión.</div>
+        <p>
+          El retiro parcial por desempleo puede ocasionar un descuento de semanas cotizadas
+          proporcional a los recursos retirados de la subcuenta RCV.
+        </p>
+        <p>
+          Las semanas descontadas pueden recuperarse mediante el reintegro parcial o total
+          de los recursos correspondientes, conforme al procedimiento aplicable.
+        </p>
+        <div class="notice">
+          Antes de solicitar el retiro, analiza cómo puede afectar tu futura pensión.
+        </div>
       </div>
 
       <div class="tab-panel" id="tiempos">
         <h3>¿Cuánto tarda el trámite?</h3>
-        <p>CONSAR publica un plazo máximo de solución de 15 días hábiles para el trámite de retiro parcial por desempleo IMSS.</p>
-        <p>El tiempo real puede depender de la integración del expediente, la validación de los datos y las gestiones de las instituciones.</p>
+        <p>
+          CONSAR publica un plazo máximo de solución de 15 días hábiles para el trámite
+          de retiro parcial por desempleo IMSS.
+        </p>
+        <p>
+          El tiempo real puede depender de la integración del expediente, la validación
+          de los datos y las gestiones de las instituciones.
+        </p>
         <p>No se puede garantizar una fecha exacta de depósito.</p>
       </div>
+
     </div>
   </section>
 
   <section class="soft">
     <div class="container">
+
       <div class="section-heading">
         <small>Proceso de orientación</small>
         <h2>¿Cómo podemos orientarte?</h2>
@@ -740,159 +788,232 @@
       </div>
 
       <div class="steps">
+
         <article class="step">
           <div class="step-number">1</div>
           <h3>Contáctanos</h3>
           <p>Escríbenos por WhatsApp y dinos si cotizabas en IMSS o ISSSTE.</p>
         </article>
+
         <article class="step">
           <div class="step-number">2</div>
           <h3>Orientación inicial</h3>
           <p>Te explicamos los requisitos generales y qué aspectos debes revisar.</p>
         </article>
+
         <article class="step">
           <div class="step-number">3</div>
           <h3>Revisión de opciones</h3>
           <p>Conoce las modalidades y los documentos que podrían solicitarte.</p>
         </article>
+
         <article class="step">
           <div class="step-number">4</div>
           <h3>Seguimiento informativo</h3>
           <p>Te orientamos sobre los siguientes pasos ante tu AFORE.</p>
         </article>
+
       </div>
     </div>
   </section>
 
   <section id="calculadora">
     <div class="container">
+
       <div class="section-heading">
-        <small>Herramienta informativa</small>
-        <h2>Calculadora orientativa AFORE</h2>
-        <p>Realiza una simulación aproximada de la modalidad B del retiro por desempleo IMSS.</p>
+        <small>Calcula una cantidad orientativa</small>
+        <h2>Calculadora de retiro por desempleo</h2>
+        <p>
+          Ingresa tu último sueldo diario para conocer el resultado de multiplicarlo por 30 días.
+        </p>
       </div>
 
       <div class="calculator">
-        <h3 style="color:var(--dark);">Simulación de Modalidad B</h3>
+
+        <h3 style="color:var(--dark);">Calcula tu estimación</h3>
+
         <p style="color:var(--muted);font-size:14px;">
-          Introduce los valores que conozcas. Esta herramienta no consulta tu cuenta AFORE.
+          Escribe tu último Salario Base de Cotización diario en pesos mexicanos.
         </p>
 
-        <label for="salarioPromedio">Salario Base de Cotización diario promedio de las últimas 250 semanas (MXN)</label>
-        <input id="salarioPromedio" type="number" min="0" step="0.01" placeholder="Ejemplo: 350">
+        <label for="ultimoSueldoDiario">
+          ¿Cuál fue tu último sueldo diario? (MXN)
+        </label>
 
-        <label for="saldoRcv">Saldo de la subcuenta RCV (MXN)</label>
-        <input id="saldoRcv" type="number" min="0" step="0.01" placeholder="Ejemplo: 80000">
+        <input
+          id="ultimoSueldoDiario"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          placeholder="Ejemplo: 500"
+        >
 
-        <button class="btn btn-green" style="width:100%;margin-top:20px;" type="button" id="calculateButton">
-          Calcular estimación
+        <button
+          class="btn btn-green"
+          style="width:100%;margin-top:20px;"
+          type="button"
+          id="calculateButton">
+          Calcular 30 días
         </button>
 
         <div class="result" id="resultado" aria-live="polite">
-          <span>Estimación orientativa de Modalidad B:</span>
+          <span>Tu cálculo orientativo (sueldo diario × 30 días):</span>
           <strong id="montoEstimado">$0.00</strong>
           <p id="detalleCalculo"></p>
         </div>
 
         <div class="notice">
-          <strong>Advertencia:</strong> El cálculo compara 90 días de salario promedio
-          con el 11.5% del saldo RCV y muestra el menor. No verifica semanas,
-          antigüedad de cuenta, elegibilidad ni otros requisitos. No es una oferta,
-          autorización ni promesa de pago. La AFORE y el IMSS determinan el resultado oficial.
+          <strong>Importante:</strong>
+          Esto depende de tus semanas cotizadas y del monto que tengas en cesantía y vejez.
+          El resultado es únicamente una operación orientativa: no representa una cantidad
+          autorizada ni garantiza que ese sea el monto que puedas retirar. La AFORE y las
+          instituciones correspondientes revisan los requisitos, límites y condiciones
+          aplicables a cada caso.
         </div>
+
       </div>
     </div>
   </section>
 
   <section id="servicios" class="soft">
     <div class="container">
+
       <div class="section-heading">
         <small>Atención personalizada</small>
         <h2>Conoce nuestros servicios de orientación</h2>
-        <p>Información y acompañamiento independiente para que conozcas mejor el proceso.</p>
+        <p>
+          Información y acompañamiento independiente para que conozcas mejor el proceso.
+        </p>
       </div>
 
       <div class="grid">
+
         <article class="card">
           <div class="card-icon">🔎</div>
           <h3>Revisión de requisitos</h3>
           <p>Orientación inicial sobre los requisitos generales del retiro por desempleo.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">👆</div>
           <h3>Orientación biométrica</h3>
-          <p>Información sobre la actualización del expediente y la validación biométrica ante tu AFORE.</p>
+          <p>
+            Información sobre la actualización del expediente y la validación biométrica ante tu AFORE.
+          </p>
         </article>
+
         <article class="card">
           <div class="card-icon">📊</div>
           <h3>Modalidades de retiro</h3>
           <p>Conoce las diferencias generales entre las modalidades A y B.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">📁</div>
           <h3>Documentación</h3>
           <p>Información sobre los documentos que pueden ser necesarios para tu solicitud.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">💬</div>
           <h3>Atención personalizada</h3>
           <p>Resuelve tus dudas mediante atención por WhatsApp.</p>
         </article>
+
         <article class="card">
           <div class="card-icon">📌</div>
           <h3>Seguimiento informativo</h3>
           <p>Orientación sobre los pasos generales y dónde consultar el estado de tu trámite.</p>
         </article>
+
       </div>
     </div>
   </section>
 
   <section id="preguntas">
     <div class="container">
+
       <div class="section-heading">
         <small>Resolvemos tus dudas</small>
         <h2>Preguntas frecuentes</h2>
       </div>
 
       <div class="faq">
+
         <details>
           <summary>¿Cualquier persona desempleada puede retirar de su AFORE?</summary>
-          <p>No necesariamente. Debe cumplir los requisitos establecidos para el régimen y modalidad que le corresponda. La AFORE y el IMSS verifican la procedencia.</p>
+          <p>
+            No necesariamente. Debe cumplir los requisitos establecidos para el régimen
+            y modalidad que le corresponda. La AFORE y el IMSS verifican la procedencia.
+          </p>
         </details>
+
         <details>
           <summary>¿El retiro afecta mis semanas cotizadas?</summary>
-          <p>Sí. Puede generar un descuento proporcional a los recursos retirados. Las semanas pueden recuperarse mediante el reintegro correspondiente.</p>
+          <p>
+            Sí. Puede generar un descuento proporcional a los recursos retirados.
+            Las semanas pueden recuperarse mediante el reintegro correspondiente.
+          </p>
         </details>
+
         <details>
           <summary>¿Cuánto dinero puedo recibir?</summary>
-          <p>Depende de tu salario base de cotización, saldo de la subcuenta RCV, modalidad y validación oficial. No es posible garantizar una cantidad sin la evaluación de tu caso.</p>
+          <p>
+            Depende de tu salario base de cotización, saldo de la subcuenta RCV,
+            modalidad y validación oficial. No es posible garantizar una cantidad
+            sin la evaluación de tu caso.
+          </p>
         </details>
+
         <details>
           <summary>¿Cuánto tarda el trámite?</summary>
-          <p>CONSAR indica un plazo máximo de solución de 15 días hábiles para el trámite IMSS. Pueden existir situaciones que afecten los tiempos.</p>
+          <p>
+            CONSAR indica un plazo máximo de solución de 15 días hábiles para el trámite IMSS.
+            Pueden existir situaciones que afecten los tiempos.
+          </p>
         </details>
+
         <details>
           <summary>¿El trámite oficial tiene algún costo?</summary>
-          <p>El trámite oficial de retiro por desempleo ante la AFORE es gratuito. Cualquier servicio privado de asesoría independiente debe explicarse y cotizarse por separado, sin presentarlo como un cobro oficial.</p>
+          <p>
+            El trámite oficial de retiro por desempleo ante la AFORE es gratuito.
+            Cualquier servicio privado de asesoría independiente debe explicarse
+            y cotizarse por separado, sin presentarlo como un cobro oficial.
+          </p>
         </details>
+
         <details>
           <summary>¿Ustedes son una AFORE o una institución del gobierno?</summary>
-          <p>No. Somos un servicio independiente de orientación. La autorización del retiro corresponde a las instituciones oficiales.</p>
+          <p>
+            No. Somos un servicio independiente de orientación.
+            La autorización del retiro corresponde a las instituciones oficiales.
+          </p>
         </details>
+
         <details>
           <summary>¿También ofrecen información para trabajadores ISSSTE?</summary>
-          <p>Sí, podemos proporcionar información general. Los requisitos y modalidades del ISSSTE son distintos y deben revisarse conforme al régimen de pensión aplicable.</p>
+          <p>
+            Sí, podemos proporcionar información general. Los requisitos y modalidades
+            del ISSSTE son distintos y deben revisarse conforme al régimen de pensión aplicable.
+          </p>
         </details>
+
       </div>
     </div>
   </section>
 
   <section class="soft" id="fuentes">
     <div class="container">
+
       <div class="section-heading">
         <small>Consulta información oficial</small>
         <h2>Fuentes de información</h2>
-        <p>Te recomendamos verificar los requisitos y condiciones directamente con las instituciones correspondientes.</p>
+        <p>
+          Te recomendamos verificar los requisitos y condiciones directamente
+          con las instituciones correspondientes.
+        </p>
+
         <div class="sources">
           <a href="https://www.consar.gob.mx/" target="_blank" rel="noopener">CONSAR</a>
           <a href="https://www.gob.mx/aforemovil" target="_blank" rel="noopener">AforeMóvil</a>
@@ -900,24 +1021,33 @@
           <a href="https://www.gob.mx/issste" target="_blank" rel="noopener">ISSSTE</a>
         </div>
       </div>
+
     </div>
   </section>
 
   <section id="contacto">
     <div class="container">
+
       <div class="contact-box">
         <h2>¿Quieres conocer tus opciones?</h2>
+
         <p>
           Escríbenos y recibe orientación inicial sobre el retiro parcial por desempleo.
           Estamos para resolver tus dudas.
         </p>
+
         <span class="contact-number">934 230 8693</span>
-        <a class="btn btn-primary" href="https://wa.me/529342308693?text=Hola%2C%20me%20interesa%20recibir%20orientaci%C3%B3n%20sobre%20el%20retiro%20por%20desempleo%20AFORE." target="_blank" rel="noopener">
+
+        <a class="btn btn-primary"
+           href="https://wa.me/529342308693?text=Hola%2C%20me%20interesa%20recibir%20orientaci%C3%B3n%20sobre%20el%20retiro%20por%20desempleo%20AFORE."
+           target="_blank" rel="noopener">
           <span>Contactar por WhatsApp</span>
         </a>
       </div>
+
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -937,7 +1067,9 @@
       con terceros. Verifica cualquier solicitud de documentos directamente con tu AFORE.
     </div>
 
-    <p style="margin-top:20px;">© <span id="year"></span> Retiro AFORE. Información sujeta a cambios normativos.</p>
+    <p style="margin-top:20px;">
+      © <span id="year"></span> Retiro AFORE. Información sujeta a cambios normativos.
+    </p>
   </div>
 </footer>
 
@@ -964,44 +1096,54 @@
     });
   });
 
-  // Calculadora orientativa de Modalidad B IMSS
+  // Calculadora interactiva: sueldo diario multiplicado por 30 días
   const calculateButton = document.getElementById("calculateButton");
+  const sueldoInput = document.getElementById("ultimoSueldoDiario");
+  const resultado = document.getElementById("resultado");
+  const montoEstimado = document.getElementById("montoEstimado");
+  const detalle = document.getElementById("detalleCalculo");
 
-  calculateButton.addEventListener("click", () => {
-    const salario = Number(document.getElementById("salarioPromedio").value);
-    const saldo = Number(document.getElementById("saldoRcv").value);
-    const resultado = document.getElementById("resultado");
-    const montoEstimado = document.getElementById("montoEstimado");
-    const detalle = document.getElementById("detalleCalculo");
+  function calcularSueldoMensual() {
+    const sueldoDiario = Number(sueldoInput.value);
 
-    if (!Number.isFinite(salario) || !Number.isFinite(saldo) ||
-        salario <= 0 || saldo <= 0) {
-      alert("Por favor, introduce cantidades mayores a cero en ambos campos.");
+    if (
+      sueldoInput.value.trim() === "" ||
+      !Number.isFinite(sueldoDiario) ||
+      sueldoDiario <= 0
+    ) {
       resultado.style.display = "none";
       return;
     }
 
-    const noventaDias = salario * 90;
-    const porcentajeSaldo = saldo * 0.115;
-    const estimacion = Math.min(noventaDias, porcentajeSaldo);
+    const estimacion = sueldoDiario * 30;
 
     const formato = new Intl.NumberFormat("es-MX", {
       style: "currency",
-      currency: "MXN"
+      currency: "MXN",
+      minimumFractionDigits: 2
     });
 
     montoEstimado.textContent = formato.format(estimacion);
-    detalle.textContent =
-      "90 días de salario: " + formato.format(noventaDias) +
-      ". El 11.5% del saldo RCV: " + formato.format(porcentajeSaldo) +
-      ". Se muestra el menor de ambos valores, sin validar los demás requisitos.";
-    resultado.style.display = "block";
-  });
 
-  // Año automático del pie de página
+    detalle.textContent =
+      formato.format(sueldoDiario) +
+      " por día × 30 días = " +
+      formato.format(estimacion) +
+      ".";
+
+    resultado.style.display = "block";
+  }
+
+  // Actualiza el cálculo automáticamente mientras el cliente escribe.
+  sueldoInput.addEventListener("input", calcularSueldoMensual);
+  calculateButton.addEventListener("click", calcularSueldoMensual);
+
+  // Año automático del pie de página.
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
+
+
 
