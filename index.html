@@ -1,528 +1,454 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Orientación independiente sobre el retiro parcial por desempleo AFORE. Conoce requisitos, modalidades y recibe atención por WhatsApp.">
-  <meta name="theme-color" content="#075c43">
-  <title>Retiro AFORE | Orientación por Desempleo</title>
-
-  <style>
-    :root {
-      --green: #087653;
-      --dark: #064b38;
-      --light: #eaf7f0;
-      --lime: #c9ed75;
-      --text: #20352d;
-      --muted: #62746b;
-      --white: #ffffff;
-      --border: #dce9e1;
-      --shadow: 0 12px 35px rgba(5, 65, 45, .09);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: #f7faf8;
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    button, input, select { font: inherit; }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    header {
-      background: var(--dark);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 3px 15px #0002;
-    }
-
-    .navbar {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      font-size: 21px;
-      font-weight: 800;
-      letter-spacing: .5px;
-    }
-
-    .brand span { color: var(--lime); }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      font-size: 13px;
-      color: #e5f4ec;
-      font-weight: bold;
-    }
-
-    nav a:hover { color: var(--lime); }
-
-    .nav-button {
-      background: var(--lime);
-      color: var(--dark);
-      padding: 10px 15px;
-      border-radius: 30px;
-      font-weight: bold;
-    }
-
-    .hero {
-      background:
-        radial-gradient(circle at 85% 20%, #168d65 0, transparent 35%),
-        linear-gradient(120deg, #064b38, #087653);
-      color: white;
-      padding: 85px 0;
-      overflow: hidden;
-    }
-
-    .hero-content { max-width: 760px; }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--lime);
-      border: 1px solid #ffffff55;
-      padding: 7px 14px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(34px, 5vw, 55px);
-      line-height: 1.12;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: #e0f0e7;
-      font-size: 18px;
-      max-width: 650px;
-      margin-bottom: 28px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 14px 22px;
-      border-radius: 9px;
-      font-weight: bold;
-      border: 0;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--lime); color: var(--dark); }
-    .btn-outline { color: white; border: 1px solid #ffffff88; background: transparent; }
-    .btn-green { color: white; background: var(--green); }
-
-    .trust-strip {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 19px 0;
-    }
-
-    .trust-items {
-      display: flex;
-      justify-content: space-around;
-      gap: 15px;
-      flex-wrap: wrap;
-      text-align: center;
-      color: var(--dark);
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    section { padding: 72px 0; }
-
-    .section-heading {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 38px;
-    }
-
-    .section-heading small {
-      color: var(--green);
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .section-heading h2 {
-      color: var(--dark);
-      font-size: clamp(27px, 4vw, 36px);
-      line-height: 1.2;
-      margin: 10px 0;
-    }
-
-    .section-heading p { color: var(--muted); }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-    }
-
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      background: var(--light);
-      border-radius: 12px;
-      font-size: 23px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: var(--dark);
-      font-size: 19px;
-      margin-bottom: 9px;
-    }
-
-    .card p { color: var(--muted); font-size: 14px; }
-    .soft { background: var(--light); }
-
-    .info-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-    }
-
-    .info-layout h2 {
-      color: var(--dark);
-      font-size: 32px;
-      line-height: 1.2;
-      margin-bottom: 17px;
-    }
-
-    .info-layout p {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .check-list {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .check-list li {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      padding: 12px 14px;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: bold;
-      margin-right: 9px;
-    }
-
-    .notice {
-      background: #fff8e8;
-      border: 1px solid #f0dca9;
-      border-radius: 12px;
-      padding: 17px;
-      color: #6c5420;
-      font-size: 14px;
-      margin-top: 20px;
-    }
-
-    .tabs {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-bottom: 25px;
-    }
-
-    .tab {
-      border: 1px solid var(--border);
-      background: white;
-      color: var(--dark);
-      border-radius: 30px;
-      padding: 10px 17px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    .tab.active {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-    }
-
-    .tab-panel {
-      display: none;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .tab-panel.active { display: block; }
-
-    .tab-panel h3 {
-      color: var(--dark);
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
-
-    .tab-panel p, .tab-panel li {
-      color: var(--muted);
-      margin-bottom: 9px;
-    }
-
-    .tab-panel ul { padding-left: 22px; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .step {
-      background: white;
-      padding: 22px;
-      border-radius: 13px;
-      border: 1px solid var(--border);
-    }
-
-    .step-number {
-      background: var(--green);
-      color: white;
-      display: grid;
-      place-items: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      font-weight: bold;
-      margin-bottom: 13px;
-    }
-
-    .step h3 { color: var(--dark); font-size: 17px; margin-bottom: 7px; }
-    .step p { color: var(--muted); font-size: 14px; }
-
-    .calculator {
-      background: white;
-      max-width: 760px;
-      margin: auto;
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      box-shadow: var(--shadow);
-    }
-
-    .calculator label {
-      display: block;
-      color: var(--dark);
-      font-weight: bold;
-      margin: 15px 0 6px;
-    }
-
-    .calculator input, .calculator select {
-      width: 100%;
-      border: 1px solid #cbdad1;
-      border-radius: 8px;
-      padding: 13px;
-      background: white;
-      color: var(--text);
-    }
-
-    .calculator input:focus, .calculator select:focus {
-      outline: 2px solid #8ccdb0;
-      border-color: var(--green);
-    }
-
-    .result {
-      display: none;
-      background: var(--light);
-      border: 1px solid #c5e5d3;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    .result strong {
-      display: block;
-      font-size: 27px;
-      color: var(--dark);
-      margin: 7px 0;
-    }
-
-    .result p { color: var(--muted); font-size: 13px; }
-
-    .faq {
-      max-width: 850px;
-      margin: auto;
-      display: grid;
-      gap: 12px;
-    }
-
-    .faq details {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 17px 20px;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      color: var(--dark);
-      font-weight: bold;
-    }
-
-    .faq details p {
-      color: var(--muted);
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    .contact-box {
-      background: linear-gradient(120deg, #064b38, #087653);
-      color: white;
-      text-align: center;
-      border-radius: 20px;
-      padding: 48px 25px;
-    }
-
-    .contact-box h2 {
-      font-size: clamp(26px, 4vw, 36px);
-      margin-bottom: 12px;
-    }
-
-    .contact-box p {
-      color: #e1f0e8;
-      max-width: 650px;
-      margin: 0 auto 22px;
-    }
-
-    .contact-number {
-      display: block;
-      font-size: 23px;
-      font-weight: bold;
-      margin: 15px 0;
-      color: var(--lime);
-    }
-
-    .sources {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .sources a {
-      color: var(--green);
-      text-decoration: underline;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    footer {
-      background: #063b2d;
-      color: #d9e9e0;
-      padding: 35px 0;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    footer p { margin: 8px 0; }
-
-    .disclaimer {
-      max-width: 850px;
-      margin: 15px auto 0;
-      color: #b9d2c4;
-      font-size: 12px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 200;
-      background: #20bd62;
-      color: white;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 27px;
-      box-shadow: 0 5px 20px #0003;
-    }
-
-    @media (max-width: 800px) {
-      nav { gap: 10px; }
-      nav a { font-size: 12px; }
-      .grid { grid-template-columns: repeat(2, 1fr); }
-      .steps { grid-template-columns: repeat(2, 1fr); }
-      .info-layout { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 560px) {
-      .navbar {
-        padding: 13px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      nav { gap: 12px; }
-      .hero { padding: 60px 0; }
-      .hero p { font-size: 16px; }
-      section { padding: 55px 0; }
-      .grid, .steps { grid-template-columns: 1fr; }
-      .calculator { padding: 21px; }
-      .tab-panel { padding: 21px; }
-      .contact-box { padding: 35px 18px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Orientación independiente sobre retiro parcial por desempleo AFORE. Conoce requisitos, modalidades y recibe atención por WhatsApp.">
+<meta name="theme-color" content="#075c43">
+<title>Retiro AFORE | Orientación por Desempleo</title>
+
+<style>
+:root{
+  --green:#087653;
+  --dark:#064b38;
+  --light:#eaf7f0;
+  --lime:#c9ed75;
+  --text:#20352d;
+  --muted:#62746b;
+  --white:#fff;
+  --border:#dce9e1;
+  --shadow:0 12px 35px rgba(5,65,45,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:#f7faf8;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.container{width:min(1120px,92%);margin:auto}
+
+header{
+  background:var(--dark);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 15px #0002;
+}
+.navbar{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  font-size:21px;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.brand span{color:var(--lime)}
+nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+nav a{
+  font-size:13px;
+  color:#e5f4ec;
+  font-weight:bold;
+}
+nav a:hover{color:var(--lime)}
+.nav-button{
+  background:var(--lime);
+  color:var(--dark);
+  padding:10px 15px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+.hero{
+  background:
+    radial-gradient(circle at 85% 20%,#168d65 0,transparent 35%),
+    linear-gradient(120deg,#064b38,#087653);
+  color:white;
+  padding:85px 0;
+  overflow:hidden;
+}
+.hero-content{max-width:760px}
+.eyebrow{
+  display:inline-block;
+  color:var(--lime);
+  border:1px solid #ffffff55;
+  padding:7px 14px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+.hero h1{
+  font-size:clamp(34px,5vw,55px);
+  line-height:1.12;
+  margin-bottom:20px;
+}
+.hero p{
+  color:#e0f0e7;
+  font-size:18px;
+  max-width:650px;
+  margin-bottom:28px;
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:14px 22px;
+  border-radius:9px;
+  font-weight:bold;
+  border:0;
+  cursor:pointer;
+  transition:.2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--lime);color:var(--dark)}
+.btn-outline{color:white;border:1px solid #ffffff88;background:transparent}
+.btn-green{color:white;background:var(--green)}
+
+.trust-strip{
+  background:white;
+  border-bottom:1px solid var(--border);
+  padding:19px 0;
+}
+.trust-items{
+  display:flex;
+  justify-content:space-around;
+  gap:15px;
+  flex-wrap:wrap;
+  text-align:center;
+  color:var(--dark);
+  font-size:14px;
+  font-weight:bold;
+}
+section{padding:72px 0}
+.section-heading{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 38px;
+}
+.section-heading small{
+  color:var(--green);
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.section-heading h2{
+  color:var(--dark);
+  font-size:clamp(27px,4vw,36px);
+  line-height:1.2;
+  margin:10px 0;
+}
+.section-heading p{color:var(--muted)}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.card{
+  background:white;
+  padding:25px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  box-shadow:var(--shadow);
+}
+.card-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  background:var(--light);
+  border-radius:12px;
+  font-size:23px;
+  margin-bottom:15px;
+}
+.card h3{
+  color:var(--dark);
+  font-size:19px;
+  margin-bottom:9px;
+}
+.card p{color:var(--muted);font-size:14px}
+.soft{background:var(--light)}
+
+.info-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+.info-layout h2{
+  color:var(--dark);
+  font-size:32px;
+  line-height:1.2;
+  margin-bottom:17px;
+}
+.info-layout p{color:var(--muted);margin-bottom:14px}
+.check-list{
+  list-style:none;
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+.check-list li{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:9px;
+  padding:12px 14px;
+}
+.check-list li::before{
+  content:"✓";
+  color:var(--green);
+  font-weight:bold;
+  margin-right:9px;
+}
+.notice{
+  background:#fff8e8;
+  border:1px solid #f0dca9;
+  border-radius:12px;
+  padding:17px;
+  color:#6c5420;
+  font-size:14px;
+  margin-top:20px;
+}
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:25px;
+}
+.tab{
+  border:1px solid var(--border);
+  background:white;
+  color:var(--dark);
+  border-radius:30px;
+  padding:10px 17px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:13px;
+}
+.tab.active{
+  background:var(--green);
+  color:white;
+  border-color:var(--green);
+}
+.tab-panel{
+  display:none;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:28px;
+  box-shadow:var(--shadow);
+  max-width:850px;
+  margin:auto;
+}
+.tab-panel.active{display:block}
+.tab-panel h3{
+  color:var(--dark);
+  margin-bottom:12px;
+  font-size:22px;
+}
+.tab-panel p,.tab-panel li{
+  color:var(--muted);
+  margin-bottom:9px;
+}
+.tab-panel ul{padding-left:22px}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+.step{
+  background:white;
+  padding:22px;
+  border-radius:13px;
+  border:1px solid var(--border);
+}
+.step-number{
+  background:var(--green);
+  color:white;
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-weight:bold;
+  margin-bottom:13px;
+}
+.step h3{color:var(--dark);font-size:17px;margin-bottom:7px}
+.step p{color:var(--muted);font-size:14px}
+
+.calculator{
+  background:white;
+  max-width:760px;
+  margin:auto;
+  padding:30px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  box-shadow:var(--shadow);
+}
+.calculator label{
+  display:block;
+  color:var(--dark);
+  font-weight:bold;
+  margin:15px 0 6px;
+}
+.calculator input,.calculator select{
+  width:100%;
+  border:1px solid #cbdad1;
+  border-radius:8px;
+  padding:13px;
+  background:white;
+  color:var(--text);
+}
+.calculator input:focus,.calculator select:focus{
+  outline:2px solid #8ccdb0;
+  border-color:var(--green);
+}
+.result{
+  display:none;
+  background:var(--light);
+  border:1px solid #c5e5d3;
+  border-radius:12px;
+  padding:20px;
+  margin-top:20px;
+}
+.result strong{
+  display:block;
+  font-size:27px;
+  color:var(--dark);
+  margin:7px 0;
+}
+.result p{color:var(--muted);font-size:13px}
+
+.faq{
+  max-width:850px;
+  margin:auto;
+  display:grid;
+  gap:12px;
+}
+.faq details{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:17px 20px;
+}
+.faq summary{
+  cursor:pointer;
+  color:var(--dark);
+  font-weight:bold;
+}
+.faq details p{
+  color:var(--muted);
+  margin-top:12px;
+  font-size:14px;
+}
+
+.contact-box{
+  background:linear-gradient(120deg,#064b38,#087653);
+  color:white;
+  text-align:center;
+  border-radius:20px;
+  padding:48px 25px;
+}
+.contact-box h2{
+  font-size:clamp(26px,4vw,36px);
+  margin-bottom:12px;
+}
+.contact-box p{
+  color:#e1f0e8;
+  max-width:650px;
+  margin:0 auto 22px;
+}
+.contact-number{
+  display:block;
+  font-size:23px;
+  font-weight:bold;
+  margin:15px 0;
+  color:var(--lime);
+}
+.sources{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.sources a{
+  color:var(--green);
+  text-decoration:underline;
+  font-weight:bold;
+  font-size:14px;
+}
+footer{
+  background:#063b2d;
+  color:#d9e9e0;
+  padding:35px 0;
+  text-align:center;
+  font-size:13px;
+}
+footer p{margin:8px 0}
+.disclaimer{
+  max-width:850px;
+  margin:15px auto 0;
+  color:#b9d2c4;
+  font-size:12px;
+}
+.whatsapp-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:200;
+  background:#20bd62;
+  color:white;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:27px;
+  box-shadow:0 5px 20px #0003;
+}
+
+@media(max-width:800px){
+  nav{gap:10px}
+  nav a{font-size:12px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .info-layout{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .navbar{
+    padding:13px 0;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  nav{gap:12px}
+  .hero{padding:60px 0}
+  .hero p{font-size:16px}
+  section{padding:55px 0}
+  .grid,.steps{grid-template-columns:1fr}
+  .calculator{padding:21px}
+  .tab-panel{padding:21px}
+  .contact-box{padding:35px 18px}
+}
+</style>
 </head>
 
 <body>
@@ -530,13 +456,13 @@
 <header>
   <div class="container navbar">
     <a class="brand" href="#inicio">RETIRO <span>AFORE</span></a>
-
     <nav aria-label="Navegación principal">
       <a href="#informacion">Información</a>
       <a href="#requisitos">Requisitos</a>
       <a href="#modalidades">Modalidades</a>
       <a href="#calculadora">Calculadora</a>
       <a href="#servicios">Servicios</a>
+      <a href="#preguntas">Preguntas</a>
       <a class="nav-button" href="#contacto">Contactar</a>
     </nav>
   </div>
@@ -544,512 +470,593 @@
 
 <main>
 
-  <section class="hero" id="inicio">
-    <div class="container">
-      <div class="hero-content">
-        <span class="eyebrow">ORIENTACIÓN SOBRE RETIRO AFORE</span>
-
-        <h1>¿Te encuentras desempleado y quieres conocer tus opciones?</h1>
-
-        <p>
-          Recibe orientación sobre el retiro parcial por desempleo de tu AFORE.
-          Conoce los requisitos, las modalidades y los pasos para revisar tu situación.
-        </p>
-
-        <div class="actions">
-          <a class="btn btn-primary"
-             href="https://wa.me/529342308693?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20retiro%20por%20desempleo%20AFORE."
-             target="_blank" rel="noopener">
-            Consultar por WhatsApp
-          </a>
-
-          <a class="btn btn-outline" href="#informacion">
-            Conocer más
-          </a>
-        </div>
+<!-- INICIO -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow">ORIENTACIÓN SOBRE RETIRO AFORE</span>
+      <h1>¿Te encuentras desempleado y quieres conocer tus opciones?</h1>
+      <p>
+        Recibe orientación sobre el retiro parcial por desempleo de tu AFORE.
+        Conoce los requisitos, las modalidades y los pasos para revisar tu situación.
+        Te explicamos la información de manera clara y sencilla.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary"
+           href="https://wa.me/529342308693?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20retiro%20por%20desempleo%20AFORE."
+           target="_blank" rel="noopener">
+          Consultar por WhatsApp
+        </a>
+        <a class="btn btn-outline" href="#informacion">Conocer más</a>
       </div>
-    </div>
-  </section>
-
-  <div class="trust-strip">
-    <div class="container trust-items">
-      <span>✓ Atención personalizada</span>
-      <span>✓ Información clara</span>
-      <span>✓ Orientación independiente</span>
-      <span>✓ Sin promesas de aprobación</span>
     </div>
   </div>
+</section>
 
-  <section id="informacion">
-    <div class="container info-layout">
+<div class="trust-strip">
+  <div class="container trust-items">
+    <span>✓ Atención personalizada</span>
+    <span>✓ Información clara</span>
+    <span>✓ Orientación independiente</span>
+    <span>✓ Sin promesas de aprobación</span>
+  </div>
+</div>
 
-      <div>
-        <small style="color:var(--green);font-weight:bold;">CONOCE TUS OPCIONES</small>
-
-        <h2>¿Qué es el retiro parcial por desempleo AFORE?</h2>
-
-        <p>
-          Es un derecho que permite a ciertos trabajadores disponer de una parte
-          de los recursos de su cuenta individual cuando cumplen los requisitos
-          establecidos por la normativa aplicable.
-        </p>
-
-        <p>
-          La autorización y el monto dependen de la situación de cada trabajador,
-          de su cuenta individual y de la validación de las instituciones correspondientes.
-        </p>
-
-        <a class="btn btn-green" href="#contacto">Solicitar orientación</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">📋</div>
-        <h3>Antes de iniciar, conoce lo importante</h3>
-
-        <ul class="check-list">
-          <li>Verifica si cumples los requisitos.</li>
-          <li>Identifica qué modalidad podría corresponderte.</li>
-          <li>Consulta las consecuencias sobre tus semanas cotizadas.</li>
-          <li>Confirma el procedimiento directamente con tu AFORE.</li>
-        </ul>
-      </div>
-
+<!-- INFORMACIÓN GENERAL -->
+<section id="informacion">
+  <div class="container info-layout">
+    <div>
+      <small style="color:var(--green);font-weight:bold">CONOCE TUS OPCIONES</small>
+      <h2>¿Qué es el retiro parcial por desempleo AFORE?</h2>
+      <p>
+        Es un derecho que permite a ciertos trabajadores disponer de una parte
+        de los recursos de su cuenta individual cuando cumplen los requisitos
+        establecidos por la normativa aplicable.
+      </p>
+      <p>
+        La autorización y el monto dependen de la situación de cada trabajador,
+        de su cuenta individual y de la validación de las instituciones correspondientes.
+      </p>
+      <p>
+        Antes de iniciar una solicitud es importante conocer las modalidades,
+        los requisitos, los posibles efectos en tus semanas cotizadas y las
+        condiciones de tu cuenta individual.
+      </p>
+      <a class="btn btn-green" href="#contacto">Solicitar orientación</a>
     </div>
-  </section>
 
-  <section class="soft" id="requisitos">
-    <div class="container">
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>Antes de iniciar, conoce lo importante</h3>
+      <ul class="check-list">
+        <li>Verifica si cumples los requisitos.</li>
+        <li>Identifica qué modalidad podría corresponderte.</li>
+        <li>Consulta las consecuencias sobre tus semanas cotizadas.</li>
+        <li>Confirma el procedimiento directamente con tu AFORE.</li>
+        <li>Revisa que tu expediente de identificación esté actualizado.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      <div class="section-heading">
-        <small>Información general</small>
-        <h2>Requisitos para el retiro por desempleo IMSS</h2>
-        <p>
-          Estos son algunos de los requisitos generales publicados por CONSAR.
-          La AFORE debe revisar cada caso.
-        </p>
+<!-- REQUISITOS -->
+<section class="soft" id="requisitos">
+  <div class="container">
+    <div class="section-heading">
+      <small>Información general</small>
+      <h2>Requisitos para el retiro por desempleo IMSS</h2>
+      <p>
+        Estos son algunos requisitos generales. La AFORE y las instituciones
+        correspondientes deben revisar cada caso.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-icon">📅</div>
+        <h3>46 días de desempleo</h3>
+        <p>Contar con al menos 46 días en situación de desempleo.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🏦</div>
+        <h3>Cuenta AFORE</h3>
+        <p>Tener una cuenta individual registrada en una AFORE.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🕔</div>
+        <h3>Regla de cinco años</h3>
+        <p>No haber ejercido este derecho durante los cinco años anteriores al trámite.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🪪</div>
+        <h3>Identificación</h3>
+        <p>Contar con expediente de identificación actualizado conforme a lo solicitado por la AFORE.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">👆</div>
+        <h3>Biometría</h3>
+        <p>Contar con el enrolamiento biométrico que corresponda, gestionado por la AFORE.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📄</div>
+        <h3>Documentación</h3>
+        <p>Presentar los documentos que solicite la AFORE para integrar la solicitud.</p>
+      </article>
+    </div>
+
+    <div class="notice">
+      <strong>Importante:</strong>
+      La modalidad A tiene requisitos adicionales: cuenta individual con al menos
+      tres años de apertura y un mínimo de doce bimestres de cotización acreditados.
+      Para la modalidad B, la cuenta debe tener cinco años o más de apertura.
+      Confirma siempre los requisitos vigentes con tu administradora.
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES Y PESTAÑAS -->
+<section id="modalidades">
+  <div class="container">
+    <div class="section-heading">
+      <small>Conoce las opciones</small>
+      <h2>Modalidades de retiro por desempleo IMSS</h2>
+      <p>
+        La modalidad aplicable y el monto autorizado los determina el
+        procedimiento oficial, de acuerdo con tu situación.
+      </p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Información del retiro">
+      <button class="tab active" type="button" data-tab="modalidadA">Modalidad A</button>
+      <button class="tab" type="button" data-tab="modalidadB">Modalidad B</button>
+      <button class="tab" type="button" data-tab="biometria">Biometría</button>
+      <button class="tab" type="button" data-tab="documentos">Documentos</button>
+      <button class="tab" type="button" data-tab="semanas">Semanas cotizadas</button>
+      <button class="tab" type="button" data-tab="tiempos">Tiempos</button>
+    </div>
+
+    <div class="tab-panel active" id="modalidadA">
+      <h3>Modalidad A</h3>
+      <p>
+        Puede corresponder a una cantidad equivalente a 30 días del último
+        Salario Base de Cotización, con el límite establecido por la normativa vigente.
+      </p>
+      <p>
+        Entre sus requisitos se encuentran una cuenta individual con al menos
+        tres años de apertura y un mínimo de doce bimestres cotizados acreditados.
+      </p>
+      <p>
+        El monto definitivo debe ser confirmado por la AFORE y el IMSS.
+        La cantidad puede variar según los límites y condiciones aplicables.
+      </p>
+      <div class="notice">
+        La calculadora de esta página realiza una multiplicación de referencia.
+        No determina ni garantiza el monto que autorizará la AFORE.
       </div>
+    </div>
 
-      <div class="grid">
+    <div class="tab-panel" id="modalidadB">
+      <h3>Modalidad B</h3>
+      <p>Puede corresponder a lo que resulte menor entre:</p>
+      <ul>
+        <li>El equivalente a 90 días del Salario Base de Cotización de las últimas 250 semanas.</li>
+        <li>El 11.5% de los recursos acumulados en la subcuenta RCV.</li>
+      </ul>
+      <p>
+        Para esta modalidad, la cuenta individual debe tener cinco años o más
+        de haber sido abierta.
+      </p>
+      <p>
+        La AFORE revisa el saldo, los datos y los requisitos antes de determinar
+        si procede la solicitud.
+      </p>
+    </div>
 
-        <article class="card">
-          <div class="card-icon">📅</div>
-          <h3>46 días de desempleo</h3>
-          <p>Contar con al menos 46 días en situación de desempleo.</p>
-        </article>
+    <div class="tab-panel" id="biometria">
+      <h3>Actualización de expediente y biometría</h3>
+      <p>
+        La AFORE puede requerir que el expediente de identificación esté
+        actualizado y que se complete el enrolamiento biométrico.
+      </p>
+      <p>
+        La validación se realiza mediante los mecanismos oficiales de la administradora.
+        Si necesitas actualizar tus datos, consulta directamente con tu AFORE
+        cuáles son los pasos disponibles.
+      </p>
+      <p>
+        No compartas huellas, contraseñas, NIP ni códigos de verificación con terceros.
+        La información biométrica debe gestionarse por los canales autorizados.
+      </p>
+    </div>
 
-        <article class="card">
-          <div class="card-icon">🏦</div>
-          <h3>Cuenta AFORE</h3>
-          <p>Tener una cuenta individual registrada en una AFORE.</p>
-        </article>
+    <div class="tab-panel" id="documentos">
+      <h3>Documentación que puede solicitarse</h3>
+      <ul>
+        <li>Identificación oficial vigente.</li>
+        <li>Documento que contenga el Número de Seguridad Social, cuando corresponda.</li>
+        <li>Estado de cuenta bancario a nombre del trabajador con CLABE.</li>
+        <li>Solicitud de disposición de recursos proporcionada por la AFORE.</li>
+        <li>Expediente de identificación actualizado.</li>
+      </ul>
+      <p>
+        La lista exacta debe confirmarse con la administradora que lleva tu cuenta.
+        Los documentos y requisitos pueden variar según el caso.
+      </p>
+      <div class="notice">
+        No envíes documentos personales, estados de cuenta completos o datos
+        confidenciales a través de páginas o personas que no sean canales oficiales.
+      </div>
+    </div>
 
-        <article class="card">
-          <div class="card-icon">🕔</div>
-          <h3>Regla de cinco años</h3>
-          <p>No haber ejercido este derecho durante los cinco años anteriores al trámite.</p>
-        </article>
+    <div class="tab-panel" id="semanas">
+      <h3>¿Qué sucede con las semanas cotizadas?</h3>
+      <p>
+        El retiro parcial por desempleo puede ocasionar un descuento de semanas
+        cotizadas proporcional a los recursos retirados de la subcuenta RCV.
+      </p>
+      <p>
+        Las semanas descontadas pueden recuperarse mediante el reintegro parcial
+        o total de los recursos correspondientes, conforme al procedimiento aplicable.
+      </p>
+      <p>
+        Antes de solicitar el retiro, analiza cómo puede afectar tu futura pensión.
+        Es recomendable consultar tu situación con tu AFORE y el IMSS.
+      </p>
+      <div class="notice">
+        El efecto sobre las semanas cotizadas depende del monto retirado y de
+        las condiciones de tu cuenta.
+      </div>
+    </div>
 
-        <article class="card">
-          <div class="card-icon">🪪</div>
-          <h3>Identificación</h3>
-          <p>Contar con expediente de identificación actualizado conforme a lo solicitado por la AFORE.</p>
-        </article>
+    <div class="tab-panel" id="tiempos">
+      <h3>¿Cuánto tarda el trámite?</h3>
+      <p>
+        CONSAR publica un plazo máximo de solución de 15 días hábiles para el
+        trámite de retiro parcial por desempleo IMSS.
+      </p>
+      <p>
+        El tiempo real puede depender de la integración del expediente,
+        la validación de los datos y las gestiones de las instituciones.
+      </p>
+      <p>
+        Si es necesario actualizar información o corregir algún dato,
+        el proceso podría requerir tiempo adicional.
+      </p>
+      <p>No se puede garantizar una fecha exacta de depósito.</p>
+    </div>
+  </div>
+</section>
 
-        <article class="card">
-          <div class="card-icon">👆</div>
-          <h3>Biometría</h3>
-          <p>Contar con el enrolamiento biométrico que corresponda, gestionado por la AFORE.</p>
-        </article>
+<!-- PASOS -->
+<section class="soft" id="pasos">
+  <div class="container">
+    <div class="section-heading">
+      <small>Proceso de orientación</small>
+      <h2>¿Cómo podemos orientarte?</h2>
+      <p>
+        Te ayudamos a conocer los pasos generales antes de acudir a tu AFORE.
+        La solicitud y autorización corresponden a las instituciones oficiales.
+      </p>
+    </div>
 
-        <article class="card">
-          <div class="card-icon">📄</div>
-          <h3>Documentación</h3>
-          <p>Presentar los documentos que solicite la AFORE para integrar la solicitud.</p>
-        </article>
+    <div class="steps">
+      <article class="step">
+        <div class="step-number">1</div>
+        <h3>Contáctanos</h3>
+        <p>Escríbenos por WhatsApp y dinos si cotizabas en IMSS o ISSSTE.</p>
+      </article>
 
+      <article class="step">
+        <div class="step-number">2</div>
+        <h3>Orientación inicial</h3>
+        <p>Te explicamos los requisitos generales y qué aspectos debes revisar.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">3</div>
+        <h3>Revisión de opciones</h3>
+        <p>Conoce las modalidades y los documentos que podrían solicitarte.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">4</div>
+        <h3>Seguimiento informativo</h3>
+        <p>Te orientamos sobre los siguientes pasos ante tu AFORE.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULADORA CORREGIDA -->
+<section id="calculadora">
+  <div class="container">
+    <div class="section-heading">
+      <small>Calculadora de orientación AFORE</small>
+      <h2>Calcula tu sueldo de referencia para el retiro</h2>
+      <p>
+        Ingresa el último sueldo diario que recibías antes de quedar desempleado.
+        La calculadora realizará la multiplicación por 30 días.
+      </p>
+    </div>
+
+    <div class="calculator">
+      <h3 style="color:var(--dark)">Calcula tu último salario diario</h3>
+
+      <p style="color:var(--muted);font-size:14px">
+        Escribe cuánto ganabas diariamente en tu último empleo,
+        antes de quedar desempleado.
+      </p>
+
+      <p style="color:var(--muted);font-size:13px;margin-top:8px">
+        Para una referencia relacionada con la Modalidad A, el dato técnico
+        que debe revisarse es el último Salario Base de Cotización (SBC)
+        registrado antes de quedar desempleado. Este dato puede ser diferente
+        del sueldo neto que recibías después de descuentos.
+      </p>
+
+      <label for="ultimoSueldoDiario">
+        ¿Cuánto era tu último sueldo diario antes de quedar desempleado? (MXN)
+      </label>
+
+      <input
+        id="ultimoSueldoDiario"
+        type="number"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+        placeholder="Ejemplo: 500 pesos diarios"
+      >
+
+      <button
+        class="btn btn-green"
+        style="width:100%;margin-top:20px"
+        type="button"
+        id="calculateButton">
+        Calcular mi sueldo de 30 días
+      </button>
+
+      <div class="result" id="resultado" aria-live="polite">
+        <span>
+          Resultado de tu último sueldo diario antes de quedar desempleado
+          multiplicado por 30 días:
+        </span>
+        <strong id="montoEstimado">$0.00</strong>
+        <p id="detalleCalculo"></p>
       </div>
 
       <div class="notice">
-        <strong>Importante:</strong> La modalidad A tiene requisitos adicionales:
-        cuenta individual con al menos tres años de apertura y un mínimo de doce
-        bimestres de cotización acreditados. Para la modalidad B, la cuenta debe
-        tener cinco años o más de apertura.
-      </div>
-
-    </div>
-  </section>
-
-  <section id="modalidades">
-    <div class="container">
-
-      <div class="section-heading">
-        <small>Conoce las opciones</small>
-        <h2>Modalidades de retiro por desempleo IMSS</h2>
-        <p>
-          La modalidad aplicable y el monto autorizado los determina el procedimiento oficial.
-        </p>
-      </div>
-
-      <div class="tabs" role="tablist" aria-label="Información del retiro">
-        <button class="tab active" type="button" data-tab="modalidadA">Modalidad A</button>
-        <button class="tab" type="button" data-tab="modalidadB">Modalidad B</button>
-        <button class="tab" type="button" data-tab="biometria">Biometría</button>
-        <button class="tab" type="button" data-tab="documentos">Documentos</button>
-        <button class="tab" type="button" data-tab="semanas">Semanas cotizadas</button>
-        <button class="tab" type="button" data-tab="tiempos">Tiempos</button>
-      </div>
-
-      <div class="tab-panel active" id="modalidadA">
-        <h3>Modalidad A</h3>
-        <p>
-          Puede corresponder a una cantidad equivalente a 30 días del último
-          Salario Base de Cotización, con el límite establecido por la normativa vigente.
-        </p>
-        <p>
-          Entre sus requisitos se encuentran una cuenta individual con al menos
-          tres años de apertura y un mínimo de doce bimestres cotizados acreditados.
-        </p>
-        <p>El monto definitivo debe ser confirmado por la AFORE y el IMSS.</p>
-      </div>
-
-      <div class="tab-panel" id="modalidadB">
-        <h3>Modalidad B</h3>
-        <p>Puede corresponder a lo que resulte menor entre:</p>
-        <ul>
-          <li>El equivalente a 90 días del Salario Base de Cotización de las últimas 250 semanas.</li>
-          <li>El 11.5% de los recursos acumulados en la subcuenta RCV.</li>
-        </ul>
-        <p>
-          Para esta modalidad, la cuenta individual debe tener cinco años o más de haber sido abierta.
-        </p>
-      </div>
-
-      <div class="tab-panel" id="biometria">
-        <h3>Actualización de expediente y biometría</h3>
-        <p>
-          La AFORE puede requerir que el expediente de identificación esté actualizado
-          y que se complete el enrolamiento biométrico.
-        </p>
-        <p>
-          La validación se realiza mediante los mecanismos oficiales de la administradora.
-          No compartas huellas, contraseñas ni códigos con terceros.
-        </p>
-      </div>
-
-      <div class="tab-panel" id="documentos">
-        <h3>Documentación que puede solicitarse</h3>
-        <ul>
-          <li>Identificación oficial vigente.</li>
-          <li>Documento que contenga el Número de Seguridad Social, cuando corresponda.</li>
-          <li>Estado de cuenta bancario a nombre del trabajador con CLABE.</li>
-          <li>Solicitud de disposición de recursos proporcionada por la AFORE.</li>
-        </ul>
-        <p>La lista exacta debe confirmarse con la administradora que lleva tu cuenta.</p>
-      </div>
-
-      <div class="tab-panel" id="semanas">
-        <h3>¿Qué sucede con las semanas cotizadas?</h3>
-        <p>
-          El retiro parcial por desempleo puede ocasionar un descuento de semanas cotizadas
-          proporcional a los recursos retirados de la subcuenta RCV.
-        </p>
-        <p>
-          Las semanas descontadas pueden recuperarse mediante el reintegro parcial o total
-          de los recursos correspondientes, conforme al procedimiento aplicable.
-        </p>
-        <div class="notice">
-          Antes de solicitar el retiro, analiza cómo puede afectar tu futura pensión.
-        </div>
-      </div>
-
-      <div class="tab-panel" id="tiempos">
-        <h3>¿Cuánto tarda el trámite?</h3>
-        <p>
-          CONSAR publica un plazo máximo de solución de 15 días hábiles para el trámite
-          de retiro parcial por desempleo IMSS.
-        </p>
-        <p>
-          El tiempo real puede depender de la integración del expediente, la validación
-          de los datos y las gestiones de las instituciones.
-        </p>
-        <p>No se puede garantizar una fecha exacta de depósito.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="soft">
-    <div class="container">
-
-      <div class="section-heading">
-        <small>Proceso de orientación</small>
-        <h2>¿Cómo podemos orientarte?</h2>
-        <p>Te ayudamos a conocer los pasos generales antes de acudir a tu AFORE.</p>
-      </div>
-
-      <div class="steps">
-
-        <article class="step">
-          <div class="step-number">1</div>
-          <h3>Contáctanos</h3>
-          <p>Escríbenos por WhatsApp y dinos si cotizabas en IMSS o ISSSTE.</p>
-        </article>
-
-        <article class="step">
-          <div class="step-number">2</div>
-          <h3>Orientación inicial</h3>
-          <p>Te explicamos los requisitos generales y qué aspectos debes revisar.</p>
-        </article>
-
-        <article class="step">
-          <div class="step-number">3</div>
-          <h3>Revisión de opciones</h3>
-          <p>Conoce las modalidades y los documentos que podrían solicitarte.</p>
-        </article>
-
-        <article class="step">
-          <div class="step-number">4</div>
-          <h3>Seguimiento informativo</h3>
-          <p>Te orientamos sobre los siguientes pasos ante tu AFORE.</p>
-        </article>
-
+        <strong>Importante:</strong>
+        Esto depende de tus semanas cotizadas y del monto que tengas en
+        cesantía y vejez. El resultado es únicamente una operación orientativa:
+        no representa una cantidad autorizada ni garantiza que ese sea el monto
+        que puedas retirar. La AFORE y las instituciones correspondientes revisan
+        el Salario Base de Cotización, los requisitos, límites y condiciones
+        aplicables a cada caso.
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="calculadora">
-    <div class="container">
+<!-- SERVICIOS -->
+<section id="servicios" class="soft">
+  <div class="container">
+    <div class="section-heading">
+      <small>Atención personalizada</small>
+      <h2>Conoce nuestros servicios de orientación</h2>
+      <p>
+        Información y acompañamiento independiente para que conozcas mejor
+        el proceso y sepas qué aspectos debes revisar.
+      </p>
+    </div>
 
-      <div class="section-heading">
-        <small>Calcula una cantidad orientativa</small>
-        <h2>Calculadora de retiro por desempleo</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="card-icon">🔎</div>
+        <h3>Revisión de requisitos</h3>
         <p>
-          Ingresa tu último sueldo diario para conocer el resultado de multiplicarlo por 30 días.
+          Orientación inicial sobre los requisitos generales del retiro por desempleo.
         </p>
-      </div>
+      </article>
 
-      <div class="calculator">
-
-        <h3 style="color:var(--dark);">Calcula tu estimación</h3>
-
-        <p style="color:var(--muted);font-size:14px;">
-          Escribe tu último Salario Base de Cotización diario en pesos mexicanos.
-        </p>
-
-        <label for="ultimoSueldoDiario">
-          ¿Cuál fue tu último sueldo diario? (MXN)
-        </label>
-
-        <input
-          id="ultimoSueldoDiario"
-          type="number"
-          min="0"
-          step="0.01"
-          inputmode="decimal"
-          placeholder="Ejemplo: 500"
-        >
-
-        <button
-          class="btn btn-green"
-          style="width:100%;margin-top:20px;"
-          type="button"
-          id="calculateButton">
-          Calcular 30 días
-        </button>
-
-        <div class="result" id="resultado" aria-live="polite">
-          <span>Tu cálculo orientativo (sueldo diario × 30 días):</span>
-          <strong id="montoEstimado">$0.00</strong>
-          <p id="detalleCalculo"></p>
-        </div>
-
-        <div class="notice">
-          <strong>Importante:</strong>
-          Esto depende de tus semanas cotizadas y del monto que tengas en cesantía y vejez.
-          El resultado es únicamente una operación orientativa: no representa una cantidad
-          autorizada ni garantiza que ese sea el monto que puedas retirar. La AFORE y las
-          instituciones correspondientes revisan los requisitos, límites y condiciones
-          aplicables a cada caso.
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios" class="soft">
-    <div class="container">
-
-      <div class="section-heading">
-        <small>Atención personalizada</small>
-        <h2>Conoce nuestros servicios de orientación</h2>
+      <article class="card">
+        <div class="card-icon">👆</div>
+        <h3>Orientación biométrica</h3>
         <p>
-          Información y acompañamiento independiente para que conozcas mejor el proceso.
+          Información sobre la actualización del expediente y la validación
+          biométrica ante tu AFORE.
         </p>
-      </div>
+      </article>
 
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-icon">🔎</div>
-          <h3>Revisión de requisitos</h3>
-          <p>Orientación inicial sobre los requisitos generales del retiro por desempleo.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">👆</div>
-          <h3>Orientación biométrica</h3>
-          <p>
-            Información sobre la actualización del expediente y la validación biométrica ante tu AFORE.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">📊</div>
-          <h3>Modalidades de retiro</h3>
-          <p>Conoce las diferencias generales entre las modalidades A y B.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">📁</div>
-          <h3>Documentación</h3>
-          <p>Información sobre los documentos que pueden ser necesarios para tu solicitud.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">💬</div>
-          <h3>Atención personalizada</h3>
-          <p>Resuelve tus dudas mediante atención por WhatsApp.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">📌</div>
-          <h3>Seguimiento informativo</h3>
-          <p>Orientación sobre los pasos generales y dónde consultar el estado de tu trámite.</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="preguntas">
-    <div class="container">
-
-      <div class="section-heading">
-        <small>Resolvemos tus dudas</small>
-        <h2>Preguntas frecuentes</h2>
-      </div>
-
-      <div class="faq">
-
-        <details>
-          <summary>¿Cualquier persona desempleada puede retirar de su AFORE?</summary>
-          <p>
-            No necesariamente. Debe cumplir los requisitos establecidos para el régimen
-            y modalidad que le corresponda. La AFORE y el IMSS verifican la procedencia.
-          </p>
-        </details>
-
-        <details>
-          <summary>¿El retiro afecta mis semanas cotizadas?</summary>
-          <p>
-            Sí. Puede generar un descuento proporcional a los recursos retirados.
-            Las semanas pueden recuperarse mediante el reintegro correspondiente.
-          </p>
-        </details>
-
-        <details>
-          <summary>¿Cuánto dinero puedo recibir?</summary>
-          <p>
-            Depende de tu salario base de cotización, saldo de la subcuenta RCV,
-            modalidad y validación oficial. No es posible garantizar una cantidad
-            sin la evaluación de tu caso.
-          </p>
-        </details>
-
-        <details>
-          <summary>¿Cuánto tarda el trámite?</summary>
-          <p>
-            CONSAR indica un plazo máximo de solución de 15 días hábiles para el trámite IMSS.
-            Pueden existir situaciones que afecten los tiempos.
-          </p>
-        </details>
-
-        <details>
-          <summary>¿El trámite oficial tiene algún costo?</summary>
-          <p>
-            El trámite oficial de retiro por desempleo ante la AFORE es gratuito.
-            Cualquier servicio privado de asesoría independiente debe explicarse
-            y cotizarse por separado, sin presentarlo como un cobro oficial.
-          </p>
-        </details>
-
-        <details>
-          <summary>¿Ustedes son una AFORE o una institución del gobierno?</summary>
-          <p>
-            No. Somos un servicio independiente de orientación.
-            La autorización del retiro corresponde a las instituciones oficiales.
-          </p>
-        </details>
-
-        <details>
-          <summary>¿También ofrecen información para trabajadores ISSSTE?</summary>
-          <p>
-            Sí, podemos proporcionar información general. Los requisitos y modalidades
-            del ISSSTE son distintos y deben revisarse conforme al régimen de pensión aplicable.
-          </p>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="soft" id="fuentes">
-    <div class="container">
-
-      <div class="section-heading">
-        <small>Consulta información oficial</small>
-        <h2>Fuentes de información</h2>
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h3>Modalidades de retiro</h3>
         <p>
-          Te recomendamos verificar los requisitos y condiciones directamente
-          con las instituciones correspondientes.
+          Conoce las diferencias generales entre las modalidades A y B
+          y qué aspectos se revisan.
         </p>
+      </article>
 
-        <div class="sources">
-          <a href="https://www.consar.gob.mx/" target="_blank" rel="noopener">CONSAR</a>
-          <a href="https://www.gob.mx/aforemovil" target="_blank" rel="noopener">AforeMóvil</a>
-          <a href="https://www.imss.gob.mx/" target="_blank" rel="noopener">IMSS</a>
-          <a href="https://www.gob.mx/issste" target="_blank" rel="noopener">ISSSTE</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="contacto">
-    <div class="container">
-
-      <div class="contact-box">
-        <h2>¿Quieres conocer tus opciones?</h2>
-
+      <article class="card">
+        <div class="card-icon">📁</div>
+        <h3>Documentación</h3>
         <p>
-          Escríbenos y recibe orientación inicial sobre el retiro parcial por desempleo.
-          Estamos para resolver tus dudas.
+          Información sobre los documentos que pueden ser necesarios
+          para tu solicitud.
         </p>
+      </article>
 
-        <span class="contact-number">934 230 8693</span>
+      <article class="card">
+        <div class="card-icon">💬</div>
+        <h3>Atención personalizada</h3>
+        <p>
+          Resuelve tus dudas mediante atención por WhatsApp.
+        </p>
+      </article>
 
-        <a class="btn btn-primary"
-           href="https://wa.me/529342308693?text=Hola%2C%20me%20interesa%20recibir%20orientaci%C3%B3n%20sobre%20el%20retiro%20por%20desempleo%20AFORE."
-           target="_blank" rel="noopener">
-          <span>Contactar por WhatsApp</span>
-        </a>
-      </div>
-
+      <article class="card">
+        <div class="card-icon">📌</div>
+        <h3>Seguimiento informativo</h3>
+        <p>
+          Orientación sobre los pasos generales y dónde consultar
+          el estado de tu trámite.
+        </p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- PREGUNTAS FRECUENTES -->
+<section id="preguntas">
+  <div class="container">
+    <div class="section-heading">
+      <small>Resolvemos tus dudas</small>
+      <h2>Preguntas frecuentes</h2>
+      <p>
+        Encuentra respuestas a las dudas más comunes sobre el retiro parcial
+        por desempleo AFORE.
+      </p>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>¿Cualquier persona desempleada puede retirar de su AFORE?</summary>
+        <p>
+          No necesariamente. Debe cumplir los requisitos establecidos para
+          el régimen y modalidad que le corresponda. La AFORE y el IMSS
+          verifican la procedencia.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿El retiro afecta mis semanas cotizadas?</summary>
+        <p>
+          Sí. Puede generar un descuento proporcional a los recursos retirados.
+          Las semanas pueden recuperarse mediante el reintegro correspondiente.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cuánto dinero puedo recibir?</summary>
+        <p>
+          Depende de tu Salario Base de Cotización, saldo de la subcuenta RCV,
+          modalidad y validación oficial. No es posible garantizar una cantidad
+          sin la evaluación de tu caso.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cuánto tarda el trámite?</summary>
+        <p>
+          CONSAR indica un plazo máximo de solución de 15 días hábiles
+          para el trámite IMSS. Pueden existir situaciones que afecten los tiempos.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿El trámite oficial tiene algún costo?</summary>
+        <p>
+          El trámite oficial de retiro por desempleo ante la AFORE es gratuito.
+          Cualquier servicio privado de asesoría independiente debe explicarse
+          y cotizarse por separado, sin presentarlo como un cobro oficial.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Ustedes son una AFORE o una institución del gobierno?</summary>
+        <p>
+          No. Somos un servicio independiente de orientación.
+          La autorización del retiro corresponde a las instituciones oficiales.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿También ofrecen información para trabajadores ISSSTE?</summary>
+        <p>
+          Podemos proporcionar información general. Los requisitos y modalidades
+          del ISSSTE son distintos y deben revisarse conforme al régimen
+          de pensión aplicable.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Puedo conocer mi posible cantidad antes de iniciar?</summary>
+        <p>
+          Puedes reunir información de tu último Salario Base de Cotización
+          y del saldo de tu cuenta para realizar una simulación orientativa.
+          La cantidad definitiva solo puede determinarse mediante la revisión oficial.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Qué pasa si necesito actualizar mi biometría?</summary>
+        <p>
+          Debes consultar con tu AFORE los pasos para actualizar tu expediente
+          y completar la validación biométrica por los medios autorizados.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Debo compartir mi NIP o contraseña para recibir orientación?</summary>
+        <p>
+          No. Nunca compartas NIP, contraseñas, códigos de verificación
+          ni datos biométricos con terceros.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FUENTES OFICIALES -->
+<section class="soft" id="fuentes">
+  <div class="container">
+    <div class="section-heading">
+      <small>Consulta información oficial</small>
+      <h2>Fuentes de información</h2>
+      <p>
+        Te recomendamos verificar los requisitos y condiciones directamente
+        con las instituciones correspondientes.
+      </p>
+
+      <div class="sources">
+        <a href="https://www.consar.gob.mx/" target="_blank" rel="noopener">CONSAR</a>
+        <a href="https://www.gob.mx/aforemovil" target="_blank" rel="noopener">AforeMóvil</a>
+        <a href="https://www.imss.gob.mx/" target="_blank" rel="noopener">IMSS</a>
+        <a href="https://www.gob.mx/issste" target="_blank" rel="noopener">ISSSTE</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container">
+    <div class="contact-box">
+      <h2>¿Quieres conocer tus opciones?</h2>
+      <p>
+        Escríbenos y recibe orientación inicial sobre el retiro parcial
+        por desempleo. Estamos para resolver tus dudas y explicarte
+        los pasos generales del proceso.
+      </p>
+
+      <span class="contact-number">934 230 8693</span>
+
+      <a class="btn btn-primary"
+         href="https://wa.me/529342308693?text=Hola%2C%20me%20interesa%20recibir%20orientaci%C3%B3n%20sobre%20el%20retiro%20por%20desempleo%20AFORE."
+         target="_blank" rel="noopener">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
 
 </main>
 
+<!-- PIE DE PÁGINA -->
 <footer>
   <div class="container">
     <h3>RETIRO AFORE</h3>
@@ -1067,12 +1074,13 @@
       con terceros. Verifica cualquier solicitud de documentos directamente con tu AFORE.
     </div>
 
-    <p style="margin-top:20px;">
+    <p style="margin-top:20px">
       © <span id="year"></span> Retiro AFORE. Información sujeta a cambios normativos.
     </p>
   </div>
 </footer>
 
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
 <a class="whatsapp-float"
    href="https://wa.me/529342308693?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20retiro%20AFORE."
    target="_blank"
@@ -1080,66 +1088,64 @@
    aria-label="Contactar por WhatsApp">☏</a>
 
 <script>
-  // Pestañas de información
-  const tabButtons = document.querySelectorAll(".tab");
-  const tabPanels = document.querySelectorAll(".tab-panel");
+// FUNCIONAMIENTO DE LAS PESTAÑAS
+const tabButtons = document.querySelectorAll(".tab");
+const tabPanels = document.querySelectorAll(".tab-panel");
 
-  tabButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const target = button.dataset.tab;
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.tab;
 
-      tabButtons.forEach(item => item.classList.remove("active"));
-      tabPanels.forEach(panel => panel.classList.remove("active"));
+    tabButtons.forEach(item => item.classList.remove("active"));
+    tabPanels.forEach(panel => panel.classList.remove("active"));
 
-      button.classList.add("active");
-      document.getElementById(target).classList.add("active");
-    });
+    button.classList.add("active");
+    document.getElementById(target).classList.add("active");
   });
+});
 
-  // Calculadora interactiva: sueldo diario multiplicado por 30 días
-  const calculateButton = document.getElementById("calculateButton");
-  const sueldoInput = document.getElementById("ultimoSueldoDiario");
-  const resultado = document.getElementById("resultado");
-  const montoEstimado = document.getElementById("montoEstimado");
-  const detalle = document.getElementById("detalleCalculo");
+// CALCULADORA DEL ÚLTIMO SUELDO DIARIO POR 30 DÍAS
+const calculateButton = document.getElementById("calculateButton");
+const sueldoInput = document.getElementById("ultimoSueldoDiario");
+const resultado = document.getElementById("resultado");
+const montoEstimado = document.getElementById("montoEstimado");
+const detalle = document.getElementById("detalleCalculo");
 
-  function calcularSueldoMensual() {
-    const sueldoDiario = Number(sueldoInput.value);
+function calcularSueldoMensual() {
+  const sueldoDiario = Number(sueldoInput.value);
 
-    if (
-      sueldoInput.value.trim() === "" ||
-      !Number.isFinite(sueldoDiario) ||
-      sueldoDiario <= 0
-    ) {
-      resultado.style.display = "none";
-      return;
-    }
-
-    const estimacion = sueldoDiario * 30;
-
-    const formato = new Intl.NumberFormat("es-MX", {
-      style: "currency",
-      currency: "MXN",
-      minimumFractionDigits: 2
-    });
-
-    montoEstimado.textContent = formato.format(estimacion);
-
-    detalle.textContent =
-      formato.format(sueldoDiario) +
-      " por día × 30 días = " +
-      formato.format(estimacion) +
-      ".";
-
-    resultado.style.display = "block";
+  if (
+    sueldoInput.value.trim() === "" ||
+    !Number.isFinite(sueldoDiario) ||
+    sueldoDiario <= 0
+  ) {
+    resultado.style.display = "none";
+    return;
   }
 
-  // Actualiza el cálculo automáticamente mientras el cliente escribe.
-  sueldoInput.addEventListener("input", calcularSueldoMensual);
-  calculateButton.addEventListener("click", calcularSueldoMensual);
+  const estimacion = sueldoDiario * 30;
 
-  // Año automático del pie de página.
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const formato = new Intl.NumberFormat("es-MX", {
+    style: "currency",
+    currency: "MXN",
+    minimumFractionDigits: 2
+  });
+
+  montoEstimado.textContent = formato.format(estimacion);
+
+  detalle.textContent =
+    formato.format(sueldoDiario) +
+    " de último sueldo diario antes de quedar desempleado × 30 días = " +
+    formato.format(estimacion) + ".";
+
+  resultado.style.display = "block";
+}
+
+sueldoInput.addEventListener("input", calcularSueldoMensual);
+calculateButton.addEventListener("click", calcularSueldoMensual);
+
+// AÑO AUTOMÁTICO EN EL PIE DE PÁGINA
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
